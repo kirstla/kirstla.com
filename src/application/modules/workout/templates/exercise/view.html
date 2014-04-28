@@ -1,0 +1,6 @@
+<h1>Exercise: {{exercise.name}}</h1>
+<ul>
+	<li><a ng-click="delete()">Delete</a></li>
+	<li><a ng-href="/workout/exercise/{{exercise.id}}/edit">Edit</a></li>
+</ul>
+<p ng-bind-html="exercise.description"></p>

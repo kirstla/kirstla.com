@@ -1,0 +1,24 @@
+<h1>Edit Exercise: {{exercise.name}}</h1>
+<form name="form" novalidate="true" ng-submit="save()">
+	<dl>
+		<dt><label for="name">Name</label></dt>
+		<dd>
+			<input type="text" name="name" ng-model="exercise.name" ng-required="true" />
+			<ul class="errors" ng-show="form.name.$invalid">
+				<li ng-show="form.name.$error.required">Required</li>
+			</ul>
+		</dd>
+	</dl>
+	<dl>
+		<dt><label for="description">Description</label></dt>
+		<dd>
+			<textarea name="description" ng-model="exercise.description"></textarea>
+		</dd>
+	</dl>
+	<dl>
+		<dt>&nbsp;</dt>
+		<dd>
+			<input type="submit" value="Save" ng-disabled="form.$invalid || form.$pristine" />
+		</dd>
+	</dl>
+</form>
