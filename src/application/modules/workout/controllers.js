@@ -40,4 +40,18 @@ angular.module('application')
 			});
 		};
 	}
+angular.module('application')
+.controller('WorkOutSetsController',[
+	'workoutExerciseService',
+	'workoutSetService',
+	$log,
+	$scope,
+	function (excerciseService,setService,$log,$scope) {
+		service.fetchAll()
+		.then(function (sets) {
+			$scope.sets = sets;	
+		}function (exception) {
+			$log.debug(exception);
+		})
+	}
 ]);
